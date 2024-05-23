@@ -5,6 +5,7 @@ import {
   InboxIcon,
 } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
+import clsx from 'clsx';
 // import { fetchCardData } from '@/app/lib/data';
 const iconMap = {
   collected: BanknotesIcon,
@@ -35,15 +36,25 @@ export function Card({
   title,
   value,
   type,
+  bgcolor
 }: {
   title: string;
   value: number | string;
   type: 'invoices' | 'customers' | 'pending' | 'collected';
+  bgcolor: string;
 }) {
   const Icon = iconMap[type];
 
   return (
-    <div className="rounded-xl bg-gray-50 p-2 shadow-sm">
+    <div className={clsx('rounded-xl  p-2 shadow-sm', {
+      'bg-gray-50': bgcolor === '',
+      'bg-hotpink': bgcolor === 'hotpink',
+      'bg-aquamarine': bgcolor === 'aquamarine',
+      'bg-cornflowerblue': bgcolor === 'cornflowerblue',
+      'bg-darkseagreen': bgcolor === 'darkseagreen',
+      'bg-coral': bgcolor === 'coral',
+
+    })}>
       <div className="flex p-4">
         {Icon ? <Icon className="h-5 w-5 text-gray-700" /> : null}
         <h3 className="ml-2 text-sm font-medium">{title}</h3>

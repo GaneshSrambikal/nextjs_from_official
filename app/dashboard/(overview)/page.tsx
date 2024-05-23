@@ -1,6 +1,7 @@
 import { Card } from '@/app/ui/dashboard/cards';
 import RevenueChart from '@/app/ui/dashboard/revenue-chart';
 import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
+
 import { lusitana } from '@/app/ui/fonts';
 import { fetchRevenue, fetchCardData, fetchLatestInvoices } from '../../lib/data';
 
@@ -14,13 +15,14 @@ export default async function Page() {
         Dashboard
       </h1>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <Card title="Collected" value={totalPaidInvoices} type="collected" />
-        <Card title="Pending" value={totalPendingInvoices} type="pending" />
-        <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
+        <Card title="Collected" value={totalPaidInvoices} type="collected" bgcolor={'coral'}/>
+        <Card title="Pending" value={totalPendingInvoices} type="pending" bgcolor={'aquamarine'}/>
+        <Card title="Total Invoices" value={numberOfInvoices} type="invoices" bgcolor={'cornflowerblue'}/>
         <Card
           title="Total Customers"
           value={numberOfCustomers}
           type="customers"
+          bgcolor={'hotpink'}
         />
       </div>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
