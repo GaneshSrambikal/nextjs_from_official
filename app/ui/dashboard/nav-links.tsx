@@ -22,7 +22,7 @@ const links = [
     icon: DocumentDuplicateIcon,
   },
   { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
-  { name: 'Vercel Live', href: 'https://nextjs-dashboard-git-chp12-ganeshsrambikals-projects.vercel.app/', icon: GlobeAltIcon }
+  { name: 'Vercel Live', href: 'https://nextjs-dashboard-ganeshsrambikals-projects.vercel.app/', icon: GlobeAltIcon }
 ];
 
 export default function NavLinks() {
@@ -42,7 +42,7 @@ export default function NavLinks() {
             href={link.href}
             className={clsx("flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
               { 'bg-sky-100 text-blue-600': pathname === link.href },
-              {'hidden': currentDomain === 'https://nextjs-dashboard-git-chp12-ganeshsrambikals-projects.vercel.app/' && link.name === 'Vercel Live' }
+              {'hidden': currentDomain === 'https://nextjs-dashboard-ganeshsrambikals-projects.vercel.app/' && link.name === 'Vercel Live' }
             )}
             target={`${link.name === 'Vercel Live' ? '_blank' : ''}`}
             
