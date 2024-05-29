@@ -31,7 +31,7 @@ export default function NavLinks() {
   useEffect(() =>{
     setCurrentDomain(window.location.origin)
   },[currentDomain])
-  console.log(currentDomain)
+  // console.log(currentDomain)
   return (
     <>
       {links.map((link) => {
@@ -45,8 +45,6 @@ export default function NavLinks() {
               {'hidden': currentDomain === 'https://nextjs-dashboard-ganeshsrambikals-projects.vercel.app' && link.name === 'Vercel Live' }
             )}
             target={`${link.name === 'Vercel Live' ? '_blank' : ''}`}
-            
-            // aria-disabled={`${currentDomain === 'https://nextjs-dashboard-git-chp12-ganeshsrambikals-projects.vercel.app/' ? false : true}`}
           >
             <LinkIcon className="w-6" />
             <p className="hidden md:block">{link.name}</p>
