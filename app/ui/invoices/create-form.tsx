@@ -9,7 +9,7 @@ import {
   UserCircleIcon,
 } from '@heroicons/react/24/outline';
 import { Button } from '@/app/ui/button';
-import { createInvoice} from '@/app/lib/actions';
+import { createInvoice } from '@/app/lib/actions';
 import { useFormState } from 'react-dom';
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
@@ -119,12 +119,12 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                 </label>
               </div>
               <div id="status-error" aria-live='polite' aria-atomic='true'>
-            {state.errors?.status &&
-              state.errors.status.map((error: string) => (
-                <p className='mt-2 text-sm text-red-500' key={error}>{error}</p>
-              ))
-            }
-          </div>
+                {state.errors?.status &&
+                  state.errors.status.map((error: string) => (
+                    <p className='mt-2 text-sm text-red-500' key={error}>{error}</p>
+                  ))
+                }
+              </div>
             </div>
           </div>
         </fieldset>
